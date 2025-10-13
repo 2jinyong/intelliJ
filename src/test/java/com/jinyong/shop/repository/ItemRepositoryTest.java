@@ -34,6 +34,16 @@ class ItemRepositoryTest {
             item.setRegTime(LocalDateTime.now());
             Item savedItem = itemRepository.save(item);
         }
+        for(int i=1;i<3;i++) {
+            Item item = new Item();
+            item.setItemName("청바지" + i);
+            item.setPrice(10000 + i);
+            item.setItemDetail("청바지"+ i +" 입니다.");
+            item.setItemSellStatus(ItemSellStatus.SELL);
+            item.setStockNumber(100);
+            item.setRegTime(LocalDateTime.now());
+            Item savedItem = itemRepository.save(item);
+        }
     }
 
     @Test
@@ -72,6 +82,16 @@ class ItemRepositoryTest {
         this.createItemList();
         List<Item> itemlist = itemRepository.findAllByOrderByPriceDesc();
         for(Item item : itemlist){
+            System.out.println(item.toString());
+        }
+    }
+
+    @Test
+    @DisplayName("query 상품 조회 테스트")
+    public void findByItemDetail(){
+        this.createItemList();
+        List<Item> itemList = itemRepository.findByItemDetail("청바지");
+        for(Item item : itemList){
             System.out.println(item.toString());
         }
     }
