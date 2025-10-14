@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>링크처리 예제 페이지</h1>
+    <div>
+        <a th:href="@{/thymeleaf/exam}">예제1 페이지 이동</a>
+    </div>
+    <br>
+    <div>
+        <a th:href="@{/thymeleaf/exam2}">예제2 페이지 이동</a>
+    </div>
+    <br>
+    <div>
+        <a th:href="@{/thymeleaf/exam3}">예제3 페이지 이동</a>
+    </div>
+    <br>
+    <div>
+        <a th:href="@{/thymeleaf/exam4}">예제4 페이지 이동</a>
+    </div>
+    <br>
+    <div>
+        <a th:href="@{/thymeleaf/exam6(param1='파라미터 데이터1',param2='파라미터 데이터2')}">타임리프 파라미터 전달</a>
+    </div>
+</body>
+</html>
