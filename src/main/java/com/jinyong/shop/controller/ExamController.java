@@ -17,7 +17,7 @@ public class ExamController {
     @GetMapping("/exam")
     public String exam(Model model){
         model.addAttribute("data","타임리프ㅇㅇ.");
-        return "exam";
+        return "thymeleaf/exam";
     }
 
     @GetMapping("/exam2")
@@ -29,7 +29,7 @@ public class ExamController {
         itemDto.setRegTime(LocalDateTime.now());
 
         model.addAttribute("itemDto",itemDto);
-        return "exam2";
+        return "thymeleaf/exam2";
     }
 
     @GetMapping("exam3")
@@ -47,7 +47,7 @@ public class ExamController {
             itemDtoList.add(itemDto);
         }
         model.addAttribute("itemDtoList",itemDtoList);
-        return "exam3";
+        return "thymeleaf/exam3";
     }
 
     @GetMapping("exam4")
@@ -63,18 +63,23 @@ public class ExamController {
             itemDtoList.add(itemDto);
         }
         model.addAttribute("itemDtoList",itemDtoList);
-        return "exam4";
+        return "thymeleaf/exam4";
     }
 
     @GetMapping("exam5")
     public String exam5(){
-        return "exam5";
+        return "thymeleaf/exam5";
     }
 
     @GetMapping("exam6")
     public String exam6(String param1,String param2,Model model){
         model.addAttribute("param1",param1);
         model.addAttribute("param2",param2);
-        return "exam6";
+        return "thymeleaf/exam6";
+    }
+
+    @GetMapping("exam7")
+    public String exam7(){
+        return "thymeleaf/exam7";
     }
 }
