@@ -52,9 +52,9 @@ class MemberServiceTest {
         Member member2=createMember();
         memberService.saveMember(member1);
 
-        Throwable e= assertThrows(IllegalArgumentException.class, ()->{
+        Throwable e= assertThrows(IllegalStateException.class, ()->{
             memberService.saveMember(member2);});
 
-           assertEquals("이미 가입된회원입니다.",e.getMessage());
-        }
+           assertEquals("이미 가입된 회원입니다.",e.getMessage());
+    }
 }
