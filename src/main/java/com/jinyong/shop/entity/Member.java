@@ -42,6 +42,6 @@ public class Member {
         member.setPassword(password);
 
         member.setRole(Role.USER);
-        return new Member();
+        return member;
     }
 }
